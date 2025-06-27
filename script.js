@@ -25,19 +25,27 @@ mongoose.connect('mongodb://127.0.0.1:27017/pavinkm')
 // }
 
 async function run(){
-    const newuser = await User.create({
+
+    try{
+        const newuser = await User.create({
         name: 'Pavin',
-        age: 22,
+        age: 'pabi',
         hobbies: ['Sports', 'Music'],
         address: {
             street: "2nd Street"
         }
-    });
+        });
 
-    // newuser.name = 'Abi';
-    // await newuser.save();
+        // newuser.name = 'Abi';
+        // await newuser.save();
 
-    console.log(newuser)
+        console.log(newuser)
+    }
+    catch(e){
+        // console.log(e.message)
+        console.log(e.errors)
+    }
+    
 }
 
 run();
