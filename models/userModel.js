@@ -26,7 +26,10 @@ const userSchema = new mongoose.Schema({
         default: () => Date.now()
     },
     updatedAt: Date,
-    bestFriend: mongoose.SchemaTypes.ObjectId,
+    bestFriend: {
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: 'User' //collection
+    },
     hobbies: [String],
     address: addressSchema
 })
