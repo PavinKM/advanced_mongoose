@@ -69,6 +69,11 @@ async function run(){
 
                 //schema virtual
                 .findById('')
+
+                user.name = 'Pavan'
+                user.age = 12
+                await user.save()
+
                 console.log(user.namedEmail)
                                 
         console.log(user)

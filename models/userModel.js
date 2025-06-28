@@ -51,6 +51,19 @@ userSchema.query.byName = function(name) {
 userSchema.virtual('namedEmail').get(function(){
     return `${this.name} - ${this.email}`
 })
+
+//schema middleware - pre
+userSchema.pre('save', function(next){
+    this.name = `Mr. ${this.name}`
+    next()
+}) 
+
+// - post 
+userSchema.post('save', function(doc, next){
+    doc.name = `${doc.name} modified`
+    next()
+})
+
 const userModel = mongoose.model('User', userSchema);
 
 module.exports = userModel
