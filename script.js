@@ -53,12 +53,20 @@ async function run(){
         // const user = await User.where('name').equals('pavin');
         // const user = await User.where('age').gt('10').lt('30');
                 const user = await User
-                // .where('age')
-                .where('id')
-                .equals('') //object id
-                // .gt('10')
-                .populate('bestFriend')
-                .limit(1);
+                // // .where('age')
+                // .where('id')
+                // .equals('') //object id
+                // // .gt('10')
+                // .populate('bestFriend')
+                // .limit(1);
+
+                // .findOne({name: 'pavin'})
+                // user.sayHi()
+
+                // .findByName('pavin')
+
+                .find().byName('pavin')
+                                
         console.log(user)
     }
     catch(e){
