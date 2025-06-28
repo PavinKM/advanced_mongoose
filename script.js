@@ -65,7 +65,11 @@ async function run(){
 
                 // .findByName('pavin')
 
-                .find().byName('pavin')
+                // .find().byName('pavin')
+
+                //schema virtual
+                .findById('')
+                console.log(user.namedEmail)
                                 
         console.log(user)
     }

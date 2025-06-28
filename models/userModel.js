@@ -47,6 +47,10 @@ userSchema.query.byName = function(name) {
     return this.where({name: name})
 }
 
+//schema virtual
+userSchema.virtual('namedEmail').get(function(){
+    return `${this.name} - ${this.email}`
+})
 const userModel = mongoose.model('User', userSchema);
 
 module.exports = userModel
